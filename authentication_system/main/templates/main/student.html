@@ -1,0 +1,25 @@
+{% extends 'main/main.html'%}
+{% load static %}
+{% block content%}
+{% load crispy_forms_tags %}
+
+<div class="container">
+    <div class="row" style="margin-left: auto;margin-right: auto;">
+        
+        <div class="col-md-6" style="margin-left: auto;margin-right: auto;">
+            <h4 class="mt-4" style="text-align: center;">Your Assigned Work</h4><br>
+            {% for work in assigned %}
+                <div class="border p-3 text-wrap" style="color: rgb(205, 209, 212);">
+                    <p style="font-size: medium;">Assigned Work :-</p>
+                    <p class="ml-4" style="color: rgb(0, 224, 231);" >{{work.work_to_do}}</p>
+                    <h5>Deadline : {{work.deadline}}</h5>
+
+                </div><br>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock content%}
